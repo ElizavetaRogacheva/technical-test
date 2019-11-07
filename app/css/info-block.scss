@@ -1,0 +1,153 @@
+.info-block {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: rem(25px);
+    padding-bottom: rem(271px);
+    background: url(../img/bg-2mob.jpg) center 100% / contain no-repeat;
+    max-height: 0;
+    max-height: rem(650px);
+    transition: max-height, 1s;
+    display: none;
+
+    @include desktop {
+        position: absolute;
+        background-image: none;
+        width: 40%;
+        padding-top: rem(80px);
+        top: rem(-200px);
+        left: 0;
+    }
+}
+
+.info-block__text {
+    margin-bottom: rem(30px);
+
+    @include desktop {
+        font-size: rem(18px);
+    }
+}
+
+.info-block__title {
+    font-weight: normal;
+    font-size: rem(24px);
+    margin-bottom: rem(30px);
+}
+
+.info-lbock__list {
+    list-style: none;
+    counter-reset: myCounter;
+    padding-left: rem(30px);
+    
+    @include desktop {
+        margin-bottom: rem(50px);
+        @include desktop {
+            font-size: rem(18px);
+        }
+    }
+}
+
+.info-block__item {
+    margin-bottom: rem(14px);
+    position: relative;
+
+    &::before {
+        counter-increment: myCounter;
+        content:counter(myCounter);
+        color: $green;
+        left: rem(-30px);
+        font-size: rem(30px);
+        position: absolute;
+        top: rem(10px);
+      }
+}
+
+.info-block__link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: rem(18px);
+    padding: rem(13.5px) 0;
+    width: rem(156px);
+    text-align: center;
+    background-color: $green;
+    border-radius: rem(3px);
+
+    @include desktop {
+        background-color: $green;
+    }
+}
+
+.accordion-active {
+    &::after {
+        transform: rotate(180deg);
+        transition: rotate, 0.5s;
+    }
+
+    @include desktop {
+        border-bottom: 3px solid $green;
+        color: #171717;
+        animation: activeLink 0.01s linear 2s forwards;  
+        color: $green;
+        background-color: transparent;
+    }
+}
+
+.accordion-active + div {
+    display: block;
+    animation: makeOpacity 2s ease-in-out, 5s;
+    opacity: 1;
+}
+
+.accordion-section {
+    background-image: none;
+    transition: background-image, 1s;
+
+    @include desktop {
+        background-image: url(../img/bg-2.jpg);
+        background-size: contain;
+        background-position: 0 0;
+    }
+}
+
+
+.accordion-active-desk {
+    @include desktop {
+        width: 100%;        
+
+        ul {
+            width: rem(1202px);
+            margin: 0 auto;
+
+            li {
+                .main-nav__link {
+                    &::before {
+                        opacity: 0;
+                        transition: opacity, 1.5s;
+                        transform: translate(-50%, -320px);
+                        transition: translateY, 2s;
+                    }
+                    &::after {
+                        display: none;
+                    }
+                    transform: translateY(rem(-500px));
+                    transition: translateY, 1.5s;
+                    animation: changeOpacity 2s linear;
+                    animation: move 0.1s linear 0;
+                    background-color: transparent;
+                    padding: rem(48px) 0;
+                    border-radius: 0;
+                    margin-bottom: 0;
+                    margin-top: rem(170px);
+                }
+            }
+        }
+    }
+}
+
+
+.accordion-title {
+    @include desktop {
+        transform: translateY(rem(-1000px));
+        transition: translateY, 2s;
+    }
+}

@@ -1,0 +1,14 @@
+@function rem($px) {
+    @return $px / 16px + 0rem;
+}
+
+$desktop: 1200px;
+$tablets: 768px;
+$phones: 320px;
+
+  
+  @mixin desktop {
+    @media (min-width: $tablets){
+      @content;
+    }
+  }

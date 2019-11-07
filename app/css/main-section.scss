@@ -1,0 +1,187 @@
+.main-section {
+    min-height: 100vh;
+    background-color: #f3f2da;
+    background-image: url(../img/bg-mob.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: rem(45px);
+    padding-bottom: rem(200px);
+
+
+    @include desktop {
+        width: 100%;
+        background: url(../img/bg.jpg) center center / cover no-repeat;
+        padding-top: rem(210px);
+        padding-bottom: rem(350px);
+    }
+    
+}
+
+.main-section__title {
+    font-size: rem(36px);
+    font-weight: normal;
+    line-height: rem(48px);
+    text-align: center;
+    color: #171717;
+    margin-bottom: rem(22px);
+
+    @include desktop {
+        font-size: rem(48px);
+        margin-bottom: rem(80px);
+    }
+}
+
+.main-nav {
+    width: 90%;
+    margin: 0 auto;
+
+    @include desktop {
+        width: rem(1202px);
+    }
+}
+
+.main-nav__list {
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+.main-nav__item {
+    margin-bottom: rem(14px);
+
+    @include desktop {
+        margin-bottom: 0;
+    }
+}
+
+.main-nav__link {
+    display: block;
+    text-decoration: none;
+    color: #171717;
+    font-size: rem(17.5px);
+    max-width: 100%;
+    background-color: #fff;
+    padding: rem(24px);
+    padding-left: 20%;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: rem(21px);
+        height: rem(11px);
+        top: rem(28px);
+        right: rem(10px);
+        background: url(../img/arrow.png) center center / contain no-repeat;
+        transition: rotate, 0.5s;
+
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        left: 5%;        
+        top: rem(20px);
+    }
+    
+    &--trade {
+        &::before {
+            width: rem(35px);
+            height: rem(28px);
+            background: url(../img/icon-screen.png) center center / contain no-repeat;
+        }
+    }
+    
+    &--invest {
+        &::before {
+            width: rem(34px);
+            height: rem(28px);
+            background: url(../img/icon-bag.png) center center / contain no-repeat;
+        }
+    }
+    
+    &--investors {
+        &::before {
+            top: rem(12px);
+            width: rem(30px);
+            height: rem(36px);
+            background: url(../img/icon-invest.png) center center / contain no-repeat;
+        }
+    }
+    
+    @include desktop {
+        text-align: center;
+        font-size: rem(28px);
+        width: rem(364px);
+        border-radius: 50%;
+        background-color: rgba(255,255,255, 0.3);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        padding-top: rem(220px);
+        padding-bottom: rem(126px);
+        border-bottom: 3px solid transparent;
+ 
+        &::before {
+            top: rem(120px);
+            left: 50%;
+        }
+    
+        &--trade {
+            &::before {
+                width: rem(83px);
+                height: rem(64px);
+                transform: translateX(-41px);
+                background: url(../img/icon-screen.png) center center / contain no-repeat;
+            }
+        }
+    
+        &--invest {
+            &::before {
+                width: rem(79px);
+                height: rem(66px);
+                transform: translateX(-38px);
+                background: url(../img/icon-bag.png) center center / contain no-repeat;
+            }
+        }
+    
+        &--investors {
+            &::before {
+                width: rem(70px);
+                height: rem(84px);
+                transform: translateX(-35px);
+                top: rem(100px);
+                background: url(../img/icon-invest.png) center center / contain no-repeat;
+            }
+        }
+    
+        &::after {
+            position: absolute;
+            content: '';
+            width: rem(340px);
+            height: rem(340px);   
+            border-radius: 50%;
+            border: 1px solid; 
+            border-color: transparent;
+            background-color: transparent;
+            transition: border-color, 0.5s;
+            top: rem(12px);
+            left: rem(12px);
+            background: none;
+        }
+    
+        
+        &:hover {
+            cursor: pointer;
+            &::after {
+                border-color: #4ec5bb; 
+                transition: border-color, 0.5s;
+            }
+        }
+    }
+
+}
+

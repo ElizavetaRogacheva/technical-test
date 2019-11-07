@@ -1,0 +1,49 @@
+@keyframes makeOpacity {
+    from {
+        opacity: 0; 
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes activeLink {
+    from {
+        color: #171717;
+        border-bottom: 3px solid transparent;
+
+    }
+
+    to {
+        color: $green;
+        border-bottom: 3px solid $green;
+    }
+}
+
+
+@keyframes move {
+    from {
+        padding-top: rem(220px);
+        padding-bottom:  rem(126px);
+        border-radius: 50%;
+        margin-top: 0;
+    }
+    to {
+        padding: rem(48px) 0;
+        border-radius: 0;
+        margin-top: rem(170px);
+    }
+}
+
+
+@keyframes changeOpacity {
+    from {
+        background-color: rgba(255,255,255, 0.3);
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
